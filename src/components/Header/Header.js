@@ -12,6 +12,8 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import SettingsIcon from '@mui/icons-material/Settings';
+import { Link } from 'react-router-dom';
+
 
 export const Header = () => {
 
@@ -49,12 +51,20 @@ export const Header = () => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Movies recommendation
-                    </Typography>
-                    <Button color="inherit">Login</Button>
+
+                    <Link to='/'>
+                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                            Movies recommendation
+                        </Typography>
+                    </Link>
+
+                    <Link to='settings'>
+                        <Button color="inherit">Settings</Button>
+                    </Link>
+
                 </Toolbar>
             </AppBar>
+
             <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)}>
                 {renderList()}
             </Drawer>
